@@ -18,7 +18,7 @@ class OuedknissSpider(CrawlSpider):
          )
 
 
-    def set_user_agent(self, request):
+    def set_user_agent(self, request ,spider):
         request.headers['User-Agent'] = self.user_agent
         return request
 

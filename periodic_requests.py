@@ -13,7 +13,7 @@ def send_request():
     requests.get("https://sayarti.herokuapp.com/")
 
 if __name__ == '__main__':
-        schedule.every().day.at("19:10").do(send_request)
+        schedule.every().day.at("19:13").do(send_request)
         schedule.every().day.at("20:00").do(send_request2)
         reactor.run()
         while (true):

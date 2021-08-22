@@ -2,20 +2,17 @@ import requests
 import pytz
 from apscheduler.schedulers.blocking import BlockingScheduler
 from twisted.internet import reactor
-import schedule
+
 
 def send_request():
+    requests.get("https://sayarti.herokuapp.com/")
     requests.post("https://guarded-temple-96501.herokuapp.com/schedule.json", data={
         'project': 'default',
         'spider': 'ouedkniss'
     })
- def send_request2():
-    requests.get("https://sayarti.herokuapp.com/")
 
 if __name__ == '__main__':
-        schedule.every().day.at("19:13").do(send_request)
-        schedule.every().day.at("20:00").do(send_request2)
+        scheduler = BlockingScheduler(timezone="Africa/Lagos")
+        scheduler.add_job(send_request,'cron', hour = '19', minute = '21')
+        scheduler.start()
         reactor.run()
-        while (true):
-            schedule.run_pending()
-            time.sleep(1)

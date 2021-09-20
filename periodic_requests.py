@@ -5,8 +5,8 @@ from twisted.internet import reactor
 
 
 def send_request():
-    requests.get("https://sayarti.herokuapp.com/")
-    requests.post("https://guarded-temple-96501.herokuapp.com/schedule.json", data={
+    requests.get("https://sayarti3.herokuapp.com/")
+    requests.post("https://scrapya.herokuapp.com/schedule.json", data={
         'project': 'default',
         'spider': 'ouedkniss'
     })

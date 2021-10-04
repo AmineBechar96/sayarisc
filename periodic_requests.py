@@ -14,6 +14,6 @@ def send_request():
 
 if __name__ == '__main__':
         scheduler = BlockingScheduler(timezone="Africa/Lagos")
-        scheduler.add_job(send_request,'cron', hour = '09', minute = '00')
+        scheduler.add_job(send_request,'cron', hour = '01', minute = '20')
         scheduler.start()
         reactor.run()

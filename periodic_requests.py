@@ -5,7 +5,7 @@ from twisted.internet import reactor
 
 
 def send_request():
-    requests.get("https://sayarti3.herokuapp.com"}
+    requests.get("https://sayarti3.herokuapp.com")
     requests.post("https://scrapya.herokuapp.com/schedule.json", data={
         'project': 'default',
         'spider': 'ouedkniss'
@@ -14,6 +14,6 @@ def send_request():
 
 if __name__ == '__main__':
         scheduler = BlockingScheduler(timezone="Africa/Lagos")
-        scheduler.add_job(send_request,'cron', hour = '01', minute = '23')
+        scheduler.add_job(send_request,'cron', hour = '09', minute = '00')
         scheduler.start()
         reactor.run()
